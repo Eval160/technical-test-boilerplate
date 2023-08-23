@@ -18,7 +18,11 @@ ___
 Si vous avez une erreur de ce type :
 ```Failed opening required '/var/www/vendor/autoload_runtime.php```
 
-C'est que le composer install ne s'est pas déroulé. Ça peut arriver si vous êtes sous windows. Il faut alors entrer dans le container ```travel-app``` via un terminal et y taper cette commande :
+C'est que le composer install ne s'est pas déroulé. Ça peut arriver si vous êtes sous windows. Il faut alors entrer dans le container ```travel-app``` via un terminal 
+
+``` docker exec -it travel-app bash```
+
+Une fois dans le container, taper cette commande :
 
 ```composer install```
 
