@@ -7,6 +7,7 @@ Cloner ce projet, se déplacer à la racine et lancer la commande :
 
 ## Résolution de problèmes
 
+
 Le projet est configuré sur le port 80. En cas d'erreur à la fin du build, vérifier que vous n'avez pas d'autres applications qui utilisent le port 80 (par exemple apache).
 
 Si c'est le cas, arrêtez le service qui utilise le port 80 et relancez l'execution de docker :
@@ -14,6 +15,8 @@ Si c'est le cas, arrêtez le service qui utilise le port 80 et relancez l'execut
 Par exemple : ``` sudo service apache2 stop```
 
 ___
+
+Ce container docker a été créé sous Linux et il peut rencontrer des problèmes sous Windows.
 
 Si vous avez une erreur de ce type :
 ```Failed opening required '/var/www/vendor/autoload_runtime.php```
@@ -25,6 +28,26 @@ C'est que le composer install ne s'est pas déroulé. Ça peut arriver si vous �
 Une fois dans le container, taper cette commande :
 
 ```composer install```
+
+___
+
+Si vous avez cette erreur (erreur Symfony dans le navigateur) :
+
+```Base table or view not found: 1146 Table 'travel.travel' doesn't exist```
+
+C'est que le fichier docker-entry.sh ne s'est pas executé. Ce fichier doit être au format de line separator : LF (parfois Windows le passe ou CRLF) 
+
+Ouvrez le fichier avec un IDE et passez le en LF
+
+Executez à nouveau le fichier en entrant dans le container :
+
+``` docker exec -it travel-app bash```
+
+puis en tapant : 
+
+``` ./docker-entry.sh ```
+
+
 
 ## Execution du projet
 
