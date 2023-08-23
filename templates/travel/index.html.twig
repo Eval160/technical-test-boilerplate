@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boby Travel{% endblock %}
+
+{% block body %}
+    <h1>Cette page est à modifier</h1>
+    <ul>
+    {% for travel in travels %}
+        <li>
+            <h2>
+                {{ travel.title }}
+            </h2>
+            <p>
+                {{ travel.description }}
+            </p>
+            <div>
+                {{ travel.rate }} étoiles
+            </div>
+            <img src="{{ travel.picture }}" alt="" width="200">
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
