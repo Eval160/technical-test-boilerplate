@@ -5,11 +5,22 @@ Cloner ce projet, se déplacer à la racine et lancer la commande :
 
 ```docker compose up --build```
 
+## Résolution de problèmes
+
 Le projet est configuré sur le port 80. En cas d'erreur à la fin du build, vérifier que vous n'avez pas d'autres applications qui utilisent le port 80 (par exemple apache).
 
 Si c'est le cas, arrêtez le service qui utilise le port 80 et relancez l'execution de docker :
 
 Par exemple : ``` sudo service apache2 stop```
+
+___
+
+Si vous avez une erreur de ce type :
+```Failed opening required '/var/www/vendor/autoload_runtime.php```
+
+C'est que le composer install ne s'est pas déroulé. Ça peut arriver si vous êtes sous windows. Il faut alors entrer dans le container ```travel-app``` via un terminal et y taper cette commande :
+
+```composer install```
 
 ## Execution du projet
 
