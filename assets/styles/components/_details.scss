@@ -1,7 +1,6 @@
 .travel-details {
   display: flex;
   flex-direction: column;
-  background-color: sandybrown;
   margin-bottom: 1rem;
 
   @include media-breakpoint-up(md) {
