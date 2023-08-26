@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Travel;
 use App\Repository\TravelRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,13 @@ class TravelController extends AbstractController
         $travels = $travelRepository->findAll();
         return $this->render('travel/index.html.twig', [
             'travels' => $travels,
+        ]);
+    }
+    #[Route('/{id}', name: 'app_travel_show')]
+    public function show(Travel $travel): Response
+    {
+        return $this->render('travel/show.html.twig', [
+          'travel' => $travel,
         ]);
     }
 }
