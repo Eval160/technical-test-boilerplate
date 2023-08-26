@@ -2,10 +2,8 @@
 
 {% block title %}Boby Travel - {{ travel.title }} {% endblock %}
 {% block body %}
+  {%  include 'travel/_header.html.twig' %}
   <main class="container">
-    <header class="my-5">
-      <h1>Boby Voyages</h1>
-    </header>
     <section class="travel-details">
       <div class="travel-details__infos">
         <div class="travel-details__header">

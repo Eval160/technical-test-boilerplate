@@ -2,10 +2,8 @@
 
 {% block title %}Boby Travel{% endblock %}
 {% block body %}
+  {%  include 'travel/_header.html.twig' %}
   <main class="container">
-    <header class="my-5">
-      <h1>Boby Voyages</h1>
-    </header>
     <ul class="row gy-3 list-unstyled justify-content-center justify-content-md-start">
     {% for travel in travels %}
         <li class="col-8 col-sm-6 col-md-4 col-lg-3">
